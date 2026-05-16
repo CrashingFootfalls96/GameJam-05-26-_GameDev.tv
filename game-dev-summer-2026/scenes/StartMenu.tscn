@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bli4gowbgh5wp"]
+
+[ext_resource type="Script" uid="uid://cbx72ubkgb8ln" path="res://scenes/StartMenu.gd" id="1_fb70i"]
+
+[node name="StartMenu" type="Node" unique_id=1551586965]
+script = ExtResource("1_fb70i")
+
+[node name="PlayButton" type="Button" parent="." unique_id=98736490]
+offset_left = 185.0
+offset_top = 66.0
+offset_right = 278.0
+offset_bottom = 118.0
+text = "Start game"

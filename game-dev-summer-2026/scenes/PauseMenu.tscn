@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dojrupoem5v0q"]
+
+[ext_resource type="Script" uid="uid://brxkr5mukfdbp" path="res://scenes/PauseMenu.gd" id="1_jvnd5"]
+
+[node name="PauseMenu" type="Node" unique_id=177764229]
+script = ExtResource("1_jvnd5")
+
+[node name="Label" type="Label" parent="." unique_id=201911146]
+offset_left = 144.0
+offset_top = 118.0
+offset_right = 255.0
+offset_bottom = 141.0
+text = "This is options"
