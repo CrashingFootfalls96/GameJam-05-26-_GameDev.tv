@@ -12,7 +12,11 @@ config_version=5
 
 config/name="GameDevSummer2026"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://art/icon.svg"
+
+[autoload]
+
+AudioManager="*uid://mvdxjlyaq2g2"
 
 [display]
 
