@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://1ci5751tysjj"]
+
+[ext_resource type="Script" uid="uid://swlb3pauegry" path="res://level_components/Cloud.gd" id="1_wcqe1"]
+[ext_resource type="Texture2D" uid="uid://dn2q8sr3i70wt" path="res://art/clouds/cloud1.png" id="1_x3do8"]
+
+[sub_resource type="Animation" id="Animation_x3do8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tint:color:g")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.79607844]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tint:color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.78431374]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tint:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.81960785]
+}
+
+[sub_resource type="Animation" id="Animation_wcqe1"]
+resource_name = "cloud_idle"
+length = 4.0
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tint:color:g")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-0.5, -2, -0.5),
+"update": 0,
+"values": [8.0, 16.0, 8.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tint:color:b")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5),
+"update": 1,
+"values": [8.0, 16.0, 8.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tint:color:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5),
+"update": 0,
+"values": [0.0, 8.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfdy6"]
+_data = {
+&"RESET": SubResource("Animation_x3do8"),
+&"cloud_idle": SubResource("Animation_wcqe1")
+}
+
+[node name="Cloud" type="Node2D" unique_id=860880620]
+script = ExtResource("1_wcqe1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1424979210]
+position = Vector2(3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.278, 0.278)
+texture = ExtResource("1_x3do8")
+
+[node name="Tint" type="CanvasModulate" parent="." unique_id=1363012593]
+color = Color(0.78431374, 0.79607844, 0.81960785, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1393414300]
+libraries/ = SubResource("AnimationLibrary_cfdy6")

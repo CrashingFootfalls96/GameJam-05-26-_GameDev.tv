@@ -4,13 +4,13 @@ extends Node
 @onready var _level_select : Node2D = $UI/LevelSelect
 @onready var _pause_menu : Node2D = $UI/PauseMenu
 @onready var _game_ui : Node2D = $UI/GameUI
-@onready var _level_node : Node2D = $Level
+@onready var _level_parent : Node2D = $Level
 
 enum GAME_STATE {PAUSED, INGAME, START, LEVEL}
 var game_state = GAME_STATE.START
 
 var _level_loads : Dictionary[String, PackedScene]
-var _current_scene : Node2D
+var _current_level : Node2D
 var _level_api : LevelAPI = load("res://utils/LevelAPI.gd").new()
 
 func _ready() -> void:
@@ -25,9 +25,9 @@ func _load_level(level_path : String) -> void:
 	## optionally, add the scene to level loads so we can use them again
 	_level_loads["some_key"] =  load
 	_level_api.reset()
-	_current_scene = load.instantiate()
-	_current_scene.give_api(_level_api)
-	_level_node.add_child(_current_scene)
+	_current_level = load.instantiate()
+	_current_level.give_api(_level_api)
+	_level_parent.add_child(_current_level)
 	_show_game_ui()
 	game_state = GAME_STATE.INGAME
 

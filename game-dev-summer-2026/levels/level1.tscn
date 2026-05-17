@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bwqp4jpopprg8"]
 
 [ext_resource type="Script" uid="uid://c8fon71aram76" path="res://levels/level1.gd" id="1_sjb42"]
+[ext_resource type="PackedScene" uid="uid://b307fp07noa0b" path="res://level_components/ObstacleSpawner.tscn" id="2_pdtm5"]
+[ext_resource type="PackedScene" uid="uid://1ci5751tysjj" path="res://level_components/Cloud.tscn" id="3_b3oru"]
 
 [node name="Level1" type="Node2D" unique_id=765231822]
 script = ExtResource("1_sjb42")
@@ -11,3 +13,18 @@ offset_top = 215.0
 offset_right = 753.0
 offset_bottom = 238.0
 text = "This is level one"
+
+[node name="ObstacleSpawner" parent="." unique_id=1768552102 instance=ExtResource("2_pdtm5")]
+position = Vector2(0, -100)
+spawn_types = Dictionary[String, PackedScene]({
+"Cloud": ExtResource("3_b3oru")
+})
+spawn_rates = Dictionary[String, float]({
+"Cloud": 2.0
+})
+left_bounds = Dictionary[String, int]({
+"Cloud": 100
+})
+right_bounds = Dictionary[String, int]({
+"Cloud": 100
+})
