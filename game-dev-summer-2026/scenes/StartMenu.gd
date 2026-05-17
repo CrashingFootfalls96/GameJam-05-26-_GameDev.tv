@@ -1,4 +1,6 @@
 extends Node
 
+signal play_click
+
 func _ready() -> void:
-	print("start menu loaded")
+	$PlayButton.pressed.connect(func(): emit_signal("play_click"))

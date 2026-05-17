@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b24ddwp0h4tw8"]
+
+[ext_resource type="Script" uid="uid://bekaptywdqn36" path="res://scenes/Root.gd" id="1_ont70"]
+[ext_resource type="PackedScene" uid="uid://b1w5h353vgxsw" path="res://scenes/StartMenu.tscn" id="2_5npxh"]
+[ext_resource type="PackedScene" uid="uid://crv0ciovsj3b4" path="res://scenes/LevelSelect.tscn" id="3_c618l"]
+[ext_resource type="PackedScene" uid="uid://crhrkhc60yahs" path="res://scenes/PauseMenu.tscn" id="4_0x7h0"]
+[ext_resource type="PackedScene" uid="uid://eon2qnskgkge" path="res://scenes/GameUI.tscn" id="5_3wcpb"]
+
+[node name="Root" type="Node" unique_id=1618193653]
+script = ExtResource("1_ont70")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1442948362]
+
+[node name="StartMenu" parent="UI" unique_id=1551586965 instance=ExtResource("2_5npxh")]
+
+[node name="LevelSelect" parent="UI" unique_id=1423649127 instance=ExtResource("3_c618l")]
+
+[node name="PauseMenu" parent="UI" unique_id=177764229 instance=ExtResource("4_0x7h0")]
+
+[node name="GameUI" parent="UI" unique_id=163273759 instance=ExtResource("5_3wcpb")]
+
+[node name="Level" type="Node2D" parent="." unique_id=1724254999]

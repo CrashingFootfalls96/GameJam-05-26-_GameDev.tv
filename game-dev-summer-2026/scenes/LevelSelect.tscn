@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://dxr51f3eddd2f"]
+[gd_scene format=3 uid="uid://crv0ciovsj3b4"]
 
 [ext_resource type="Script" uid="uid://c4xrtqxx57cgn" path="res://scenes/LevelSelect.gd" id="1_dbyaq"]
 
-[node name="LevelSelect" type="Node" unique_id=1423649127]
+[node name="LevelSelect" type="Node2D" unique_id=1830794189]
 script = ExtResource("1_dbyaq")
 
-[node name="Button" type="Button" parent="." unique_id=221562200]
+[node name="Level1" type="Button" parent="." unique_id=221562200]
 offset_left = 324.0
 offset_top = 275.0
 offset_right = 459.0
